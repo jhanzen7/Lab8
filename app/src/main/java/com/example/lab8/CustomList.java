@@ -58,4 +58,18 @@ public class CustomList extends ArrayAdapter<City> {
         cities.add(city);
     }
 
+    /**
+     * This checks if the given city is in the list by comparing city names and province names.
+     *
+     * @param city The city to check.
+     * @return True if a city with the same name and province exists in the list, false otherwise.
+     */
+    public boolean hasCity(City city) {
+        for (City c : cities) {
+            if (c.getCityName().equals(city.getCityName()) && c.getProvinceName().equals(city.getProvinceName())) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
